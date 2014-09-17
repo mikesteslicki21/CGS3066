@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Project 3: Airline reservation</title>
+		<link rel="stylesheet" type="text/css" href="includes/Project3.css">
+		<link rel="stylesheet" type="text/css" href="includes/jQueryUI/css/ui-lightness/jquery-ui-1.9.1.custom.min.css">
+		<script type="text/javascript">var possibleDepartureFlights=[{year:2012,month:11,day:13,hour:17,minute:37,price:137.38},{year:2012,month:11,day:19,hour:5,minute:11,price:121.05},{year:2012,month:11,day:24,hour:19,minute:41,price:182.44},{year:2012,month:12,day:8,hour:8,minute:22,price:140.75},{year:2012,month:12,day:17,hour:10,minute:30,price:110.12},{year:2013,month:1,day:4,hour:18,minute:55,price:177.77},{year:2013,month:1,day:18,hour:12,minute:8,price:154.32},{year:2013,month:2,day:13,hour:15,minute:24,price:139.98},{year:2013,month:2,day:21,hour:11,minute:33,price:122.36},{year:2013,month:3,day:5,hour:9,minute:24,price:160.45}]; var possibleReturnFlights=[{year:2012,month:11,day:18,hour:21,minute:45,price:189.46},{year:2012,month:11,day:26,hour:4,minute:18,price:143.96},{year:2012,month:11,day:30,hour:11,minute:31,price:192.84},{year:2012,month:12,day:19,hour:7,minute:56,price:190.75},{year:2012,month:12,day:25,hour:13,minute:30,price:210.12},{year:2013,month:1,day:10,hour:2,minute:15,price:167.66},{year:2013,month:1,day:27,hour:14,minute:38,price:129.21},{year:2013,month:2,day:19,hour:16,minute:42,price:143.85},{year:2013,month:3,day:2,hour:17,minute:11,price:162.41},{year:2013,month:3,day:15,hour:8,minute:53,price:159.45}];</script>
+	</head>
+	<body>
+		<!-- The site header -->
+		<div class="SiteHeader">
+			<h1>Get me out!!</h1>
+			<p>Help the user get out of Tallahassee, at least for a while.</p>
+		</div>
+
+		<!-- The area of two lists of choices -->
+		<div class="FlightMenuArea">
+
+			<!-- The area for the departure flights -->
+			<div class="FlightsArea DeparturesArea">
+				<h2>Tallahassee</h2>
+
+				<!-- Container for the form control -->
+				<div class="FlightList">
+						<select id="departureFlightsControl">
+							<option></option>
+						</select>
+				</div>
+			</div>
+
+			<!-- The area for the return flights -->
+			<div class="FlightsArea ReturnsArea">
+				<h2>Anywhere, Please</h2>
+
+				<!-- Container for the form control -->
+				<div class="FlightList">
+						<select id="returnFlightsControl">
+							<option></option>
+						</select>
+				</div>
+			</div>
+		</div>
+
+		<!-- The area for a summary of the user's choices -->
+		<div class="SummaryArea">
+			<h2>Summary</h2>
+
+			<!-- The area for the summary of the departure flight -->
+			<div class="FlightSummary DepartureSummary">
+				<div class="Heading">Departure / Tallahassee</div>
+				<div class="CancelButton">X</div>
+				<div class="DateTime"></div>
+				<div class="Price"></div>
+				<div class="NoFlightMessage">No flight chosen</div>
+			</div>
+
+			<!-- The area for the summary of the return flight -->
+			<div class="FlightSummary ReturnSummary">
+				<div class="Heading">Return / Anywhere</div>
+				<div class="CancelButton">X</div>
+				<div class="DateTime"></div>
+				<div class="Price"></div>
+				<div class="NoFlightMessage">No flight chosen</div>
+			</div>
+
+			<!-- The area for the total/cumulative summary -->
+			<div class="CumulativeSummary">
+
+				<!-- The area for the total price -->
+				<div class="TotalPriceArea">
+					<span class="Title">Total:</span>
+					<span class="Price"></span>
+				</div>
+
+				<!-- The area for the submit button -->
+				<div class="SubmitArea">
+					<button id="SubmitButton">Submit</button>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="includes/jQuery/jquery-1.8.2.min.js"></script>
+		<script type="text/javascript" src="includes/jQueryUI/jquery-ui-1.9.1.custom.min.js"></script>
+		<script type="text/javascript" src="includes/Project3_Solution.js"></script>
+	</body>
+</html>

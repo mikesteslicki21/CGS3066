@@ -1,0 +1,298 @@
+body {
+	margin: 0px;
+	padding: 0px;
+
+	background: url('../images/Airplane-clipart.jpg') 20px 30px no-repeat #DFDFEF;
+
+	font-family: sans-serif;
+}
+
+/* The site header */
+.SiteHeader {
+	margin: 4px 20px 24px 12px;
+}
+
+.SiteHeader h1 {
+	margin: 0px 0px 8px 0px;
+
+	color: #000065;
+}
+
+.SiteHeader p {
+	margin: 6px 20px 24px 8px;
+
+	font-size: 18px;
+	color: rgba(0, 0, 0, 0.7);
+}
+
+/* The wide container of departures & returns */
+.FlightMenuArea {
+	position: relative;
+
+	margin: 24px auto;
+
+	width: 85%;
+	min-width: 700px;
+	height: 295px;
+	border: 1px dotted rgba(0, 0, 40, 0.1);
+	border-radius: 6px;
+}
+
+/* Each one of the departures/returns areas */
+.FlightMenuArea .FlightsArea {
+	padding: 6px;
+
+	width: 46%;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-radius: 6px;
+}
+
+.FlightMenuArea .FlightsArea h2 {
+	margin: 6px 2px;
+
+	color: #44446F;
+}
+
+.FlightMenuArea .FlightsArea select {
+	margin: 0px 2.5% 8px 2.5%;
+
+	width: 95%;
+
+	cursor: pointer;
+}
+
+/* Departures area */
+.FlightMenuArea .FlightsArea.DeparturesArea {
+	position: absolute;
+	top: 6px;
+	left: 6px;
+}
+
+/* Returns area */
+.FlightMenuArea .FlightsArea.ReturnsArea {
+	position: absolute;
+	top: 6px;
+	right: 6px;
+}
+
+/* The container of the summary area */
+.SummaryArea {
+	position: relative;
+
+	margin: 24px auto;
+
+	width: 85%;
+	min-width: 700px;
+	height: 245px;
+	border: 1px dotted rgba(0, 0, 40, 0.1);
+	border-radius: 6px;
+}
+
+.SummaryArea h2 {
+	margin: 6px 10px;
+
+	color: #44446F;
+}
+
+/* A flight summary in general - departure or summary (i.e. top or bottom row) */
+.SummaryArea .FlightSummary {
+	position: relative;
+
+	margin: 0px auto;
+
+	width: 92.5%;
+	height: 70px;
+}
+
+.SummaryArea .FlightSummary .Heading {
+	position: absolute;
+	top: 5px;
+	left: 70px;
+
+	border-bottom: 1px solid rgba(0, 0, 25, 0.08);
+
+	font-size: 75%;
+	color: rgba(0, 0, 0, 0.45);
+}
+
+.SummaryArea .FlightSummary .CancelButton {
+	position: absolute;
+	top: 18px;
+	left: 20px;
+
+	padding: 3px 0px;
+
+	width: 36px;
+	height: 32px;
+	background: rgba(180, 180, 210, 0.5);
+	border: 1px solid rgba(80, 80, 120, 0.4);
+	border-radius: 9px;
+
+	font-family: monospace;
+	font-size: 30px;
+	font-weight: bold;
+	text-align: center;
+
+	cursor: pointer;
+}
+
+.SummaryArea .FlightSummary .CancelButton:hover {
+	background: rgba(180, 180, 210, 0.75);
+
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.SummaryArea .FlightSummary .DateTime {
+	position: absolute;
+	top: 24px;
+	left: 76px;
+
+	font-size: 30px;
+}
+
+.SummaryArea .FlightSummary .Price {
+	position: absolute;
+	top: 20px;
+	right: 32px;
+
+	width: 108px;
+	border-left: 1px solid rgba(40, 40, 60, 0.065);
+
+	font-size: 30px;
+	text-align: right;
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.SummaryArea .FlightSummary .NoFlightMessage {
+	padding: 20px 0px;
+
+	font-family: monospace;
+	font-size: 24px;
+	font-weight: bold;
+	font-style: italic;
+	color: rgba(80, 80, 108, 0.75);
+	text-align: center;
+}
+
+/* Make all child elements of a FlightSummary to be invisible by default */
+
+.SummaryArea .FlightSummary > * {
+	display: none;
+}
+
+/* ..except for the no-flight message. */
+
+.SummaryArea .FlightSummary .NoFlightMessage {
+	display: block;
+}
+
+/* Do the opposite if the FlightSummary also has the flightChosen class. */
+
+.SummaryArea .FlightSummary.flightChosen > * {
+	display: block;
+}
+
+.SummaryArea .FlightSummary.flightChosen .NoFlightMessage {
+	display: none;
+}
+
+/* Give a special styling for the departure summary */
+.SummaryArea .DepartureSummary {
+	background: #E8E8FA;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	border-radius: 8px 8px 0px 0px;
+
+	z-index: 10;
+}
+
+/* Give a special styling for the return summary */
+.SummaryArea .ReturnSummary {
+	background: #D6D6F7;
+	border: 1px solid rgba(0, 0, 0, 0.15);
+	border-top: 0px;
+	border-radius: 0px 0px 8px 8px;
+
+	z-index: 10;
+}
+
+/* The area for the total price and submit button */
+.SummaryArea .CumulativeSummary {
+	position: relative;
+
+	margin: -12px auto 0px auto;
+	padding: 20px 1px 4px 1px;
+
+	width: 92.5%;
+	height: 25px;
+	background: rgba(100, 100, 145, 0.45);
+	border-radius: 0px 0px 6px 6px;
+
+	z-index: 5;
+}
+
+.SummaryArea .CumulativeSummary .TotalPriceArea {
+	position: absolute;
+	top: 19px;
+	right: 152px;
+}
+
+.SummaryArea .CumulativeSummary .TotalPriceArea .Title {
+	font-size: 20px;
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.SummaryArea .CumulativeSummary .TotalPriceArea .Price {
+	font-size: 20px;
+	color: rgba(0, 0, 0, 0.5);
+}
+
+/* Make the total price invisible unless the CumulativeSummary has class totalAvailable. */
+
+.SummaryArea .CumulativeSummary .TotalPriceArea {
+	display: none;
+}
+
+.SummaryArea .CumulativeSummary.totalAvailable .TotalPriceArea {
+	display: block;
+}
+
+.SummaryArea .CumulativeSummary .SubmitArea {
+	position: absolute;
+	top: 15px;
+	right: 24px;
+}
+
+.SummaryArea .CumulativeSummary .SubmitArea button {
+	padding: 1px 4px;
+
+	width: 100px;
+	height: 29px;
+	background: rgba(30, 30, 65, 0.2);
+	border: 2px solid rgba(80, 80, 120, 0.12);
+	border-radius: 3px;
+
+	font-family: monospace;
+	font-size: 18px;
+	font-weight: bold;
+	text-transform: uppercase;
+	text-align: center;
+	vertical-align: middle;
+	color: rgba(0, 0, 0, 0.35);
+
+	cursor: pointer;
+}
+
+.SummaryArea .CumulativeSummary .SubmitArea button:hover {
+	background: rgba(30, 30, 65, 0.35);
+}
+
+.SummaryArea .CumulativeSummary .SubmitArea button:disabled {
+	background: rgba(30, 30, 65, 0.125);
+	border-color: rgba(80, 80, 120, 0.08);
+
+	font-style: italic;
+	color: rgba(0, 0, 0, 0.15);
+
+	cursor: default;
+}

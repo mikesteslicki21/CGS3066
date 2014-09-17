@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CGS3066: Project 4 - Form processing</title>
+		<style type="text/css">
+			.MovieReviewForm {
+				margin: 8px 24px 4px 16px;
+				padding: 8px;
+				border: 1px solid #AAAAAA;
+				border-radius: 3px;
+			}
+
+			.FormField {
+				margin: 6px 6px 12px 6px;
+				padding: 4px 8px 8px 8px;
+				border: 1px solid #DFDFDF;
+				border-radius: 3px;
+			}
+
+			.FormField .Name {
+				margin-bottom: 6px;
+				font-family: sans-serif;
+				font-size: 110%;
+				font-weight: bold;
+				color: #666666;
+			}
+
+			.FormField .Control {
+				margin-left: 8px;
+			}
+
+			.FormField .Control,
+			.FormField .Control * {
+				font-family: monospace;
+			}
+
+			.SubmitButton {
+				margin: 12px 24px 8px 20px;
+				font-family: sans-serif;
+				font-size: 110%;
+				font-weight: bold;
+				color: #999999;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>hey it's a form</h1>
+		<p>why don't you review a movie</p>
+
+		<!-- Probably should flesh out this form HTML.. -->
+		<form method="POST" action="theFormProcessor.php">
+		<div class="MovieReviewForm">
+			<div class="FormField">
+				<div class="Name">Movie title</div>
+				<div class="Control"><input type="text" name="title"></div>
+			</div>
+
+			<div class="FormField">
+				<div class="Name">Movie URL</div>
+				<div class="Control"><input type="text" name="url"></div>
+			</div>
+
+			<div class="FormField">
+				<div class="Name">Genres (choose all that apply)</div>
+				<div class="Control">
+					<input type="checkbox" name="genres[]" value="action"> Action
+					<input type="checkbox" name="genres[]" value="drama"> Drama
+					<input type="checkbox" name="genres[]" value="romance"> Romance
+					<input type="checkbox" name="genres[]" value="whatever"> Whatever
+				</div>
+			</div>
+
+			<div class="FormField">
+				<div class="Name">Star rating</div>
+				<div class="Control">
+					<!-- or radio buttons would be totally fine; look into <label> if you do that -->
+					<select name="starRating">
+						<option value="5">5 Stars</option>
+						<option value="4">4 Stars</option>
+						<option value="3">3 Stars</option>
+						<option value="2">2 Stars</option>
+						<option value="1">1 Star</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="FormField">
+				<div class="Name">Detailed review</div>
+				<div class="Control"><textarea name="detailedReview"></textarea></div>
+			</div>
+			
+			<div class="SubmitButton"><input type="submit" value="Submit"></div>
+		</div>
+		</form>
+	</body>
+</html>
